@@ -1,8 +1,8 @@
-import logo from './logo.svg';
 import './App.css';
 import {Sidebar} from "./Sidebar"
 import {Topbar} from "./Topbar"
 import {Dashboard} from "./Dashboard"
+import Footer from "./Footer"
 import React from "react";
 import { Routes,Route,Link ,Navigate, useNavigate} from "react-router-dom";
 
@@ -18,6 +18,7 @@ function App() {
             </div>
           </div>
           </div>
+         <Footer/>
       </div>
   );
 }

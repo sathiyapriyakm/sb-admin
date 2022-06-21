@@ -1,4 +1,6 @@
 import {Card} from "./Card"
+import {ChartDashboard} from "./ChartDashboard"
+import ProjectIllustration from "./ProjectIllustration"
 export function Dashboard(){
     return(
 <>
@@ -13,6 +15,8 @@ export function Dashboard(){
     <Card detail="Tasks" value="50%" iprop="fas fa-clipboard-list fa-2x text-gray-300"/>
     <Card detail="Pending Requests" value="18" iprop="fas fa-comments fa-2x text-gray-300"/>
 </div>
+<ChartDashboard/>
+<ProjectIllustration/>
 </>
-    );
+);
 }
