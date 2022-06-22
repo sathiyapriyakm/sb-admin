@@ -3,14 +3,16 @@ import { SideBarComp } from "./SideBarComp";
 import { SideBarDashboard } from "./SideBarDashboard";
 import { SideBarPage } from "./SideBarPage";
 import { SideBarUtil } from "./SideBarUtil";
+import { useNavigate } from "react-router-dom";
 
 
 export function Sidebar() {
+  const navigate=useNavigate();
   return (
     <>
       <ul className="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
-        <a className="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <a className="sidebar-brand d-flex align-items-center justify-content-center" href="#">
           <div className="sidebar-brand-icon rotate-n-15">
             <i className="fas fa-laugh-wink"></i>
           </div>
@@ -39,13 +41,13 @@ export function Sidebar() {
         <SideBarPage/>
 
         <li className="nav-item">
-          <a className="nav-link" href="charts.html">
+          <a onClick={()=>navigate("/Charts")} className="nav-link" href="#">
             <i className="fas fa-fw fa-chart-area"></i>
             <span>Charts</span></a>
         </li>
 
         <li className="nav-item">
-          <a className="nav-link" href="tables.html">
+          <a  onClick={()=>navigate("/Tables")} className="nav-link" href="#">
             <i className="fas fa-fw fa-table"></i>
             <span>Tables</span></a>
         </li>

@@ -50,10 +50,10 @@ export function Login() {
                                             </form>
                                             <hr />
                                             <div className="text-center">
-                                                <a onClick={() => navigate("/")} className="small" href="#">Forgot Password?</a>
+                                                <a onClick={() => navigate("/Forgot-Password")} className="small" href="#">Forgot Password?</a>
                                             </div>
                                             <div className="text-center">
-                                                <a onClick={() => navigate("/")} className="small" href="#">Create an Account!</a>
+                                                <a onClick={() => navigate("/Register")} className="small" href="#">Create an Account!</a>
                                             </div>
                                         </div>
                                     </div>

@@ -20,7 +20,7 @@ export function SideBarPage() {
             <div className="collapse-divider"></div>
             <h6 className="collapse-header">Other Pages:</h6>
             <a onClick={()=>navigate("/404-Page")} className="collapse-item" href="#">404 Page</a>
-            <a onClick={()=>navigate("/Blank-page")} className="collapse-item" href="#">Blank Page</a>
+            <a onClick={()=>navigate("/Blank-Page")} className="collapse-item" href="#">Blank Page</a>
           </div>
         </div>
       </li></>
