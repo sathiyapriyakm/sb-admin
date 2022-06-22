@@ -1,7 +1,9 @@
+import {useNavigate} from "react-router-dom";
 import { useState } from "react";
 
 export function SideBarComp() {
   const [show,setShow]= useState(false);
+  const navigate=useNavigate();
 
   return (<>
     <li className="nav-item">
@@ -13,8 +15,8 @@ export function SideBarComp() {
       <div id="collapseTwo" className={show ? "collapse show" : "collapse"} aria-labelledby="headingTwo" data-parent="#accordionSidebar">
         <div className="bg-white py-2 collapse-inner rounded">
           <h6 className="collapse-header">Custom Components:</h6>
-          <a className="collapse-item" href="buttons.html">Buttons</a>
-          <a className="collapse-item" href="cards.html">Cards</a>
+          <a onClick={()=>navigate("/Buttons")} className="collapse-item" href="#">Buttons</a>
+          <a onClick={()=>navigate("/Cards")} className="collapse-item" href="#">Cards</a>
         </div>
       </div>
     </li>

@@ -5,6 +5,13 @@ import {Dashboard} from "./Dashboard"
 import Footer from "./Footer"
 import React from "react";
 import { Routes,Route,Link ,Navigate, useNavigate} from "react-router-dom";
+import { Buttons } from './Buttons';
+import { Cards } from './Cards';
+import { Colors } from './Colors';
+import { Borders } from './Borders';
+import { Animations } from './Animations';
+import { Other } from './Other';
+import { Login } from './Login';
 
 function App() {
   return (
@@ -14,12 +21,27 @@ function App() {
           <div id="content">
             <Topbar/>
             <div className="container-fluid">
-               <Dashboard/>
+            <section className="routes-container">
+            <Routes>
+                <Route path="/" element={<Dashboard/>}/>
+                <Route path="/Buttons" element={<Buttons/>}/>
+                <Route path="/Cards" element={<Cards/>}/>
+                <Route path="/Colors" element={<Colors/>}/>
+                <Route path="/Borders" element={<Borders/>}/>
+                <Route path="/Animations" element={<Animations/>}/>
+                <Route path="/Other" element={<Other/>}/>
+                <Route path="/Login" element={<Login/>}/>
+                {/* <Route path="/Dashboard" element={<Navigate replace to="/"/>}/> */}
+                {/* <Route path="/404" element={<NotFound/>}/>
+                <Route path="/*" element={<Navigate replace to="/404"/>}/>
+                <Route path="/basic-form" element={<BasicForm/>}/> */}
+            </Routes>
+            </section>  
             </div>
           </div>
           <Footer/>
           </div>
-          <a className="scroll-to-top rounded" href="#page-top">
+          {/* <a className="scroll-to-top rounded" href="#page-top">
         <i className="fas fa-angle-up"></i>
     </a>
     <div className="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -39,10 +61,12 @@ function App() {
                 </div>
             </div>
         </div>
-    </div>
+    </div> */}
          
       </div>
   );
 }
 
 export default App; 
+
+

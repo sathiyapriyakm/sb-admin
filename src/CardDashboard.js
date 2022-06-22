@@ -1,4 +1,4 @@
-export function Card({detail,value,iprop}){
+export function CardDashboard({detail,value,iprop}){
     const styles={
         width: "50%",
         ariavaluenow:"50",

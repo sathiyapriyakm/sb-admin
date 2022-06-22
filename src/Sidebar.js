@@ -1,5 +1,6 @@
 
 import { SideBarComp } from "./SideBarComp";
+import { SideBarDashboard } from "./SideBarDashboard";
 import { SideBarPage } from "./SideBarPage";
 import { SideBarUtil } from "./SideBarUtil";
 
@@ -17,11 +18,7 @@ export function Sidebar() {
         </a>
 
         <hr className="sidebar-divider my-0" />
-        <li className="nav-item active">
-          <a className="nav-link" href="index.html">
-            <i className="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span></a>
-        </li>
+        <SideBarDashboard/>
 
         <hr className="sidebar-divider" />
 
@@ -69,7 +66,5 @@ export function Sidebar() {
     </>
   );
 }
-
-
 
 
