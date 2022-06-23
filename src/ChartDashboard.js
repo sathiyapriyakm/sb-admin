@@ -1,4 +1,29 @@
 import React from 'react'
+import { LineChart,PieChart,Pie, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+
+
+const data= [
+    {Month:"Jan",value:0},
+    {Month:"Feb",value:10000},
+    {Month:"Mar",value:5000},
+    {Month:"Apr",value:15000},
+    {Month:"May",value:10000},
+    {Month:"Jun",value:20000},
+    {Month:"Jul",value:15000},
+    {Month:"Aug",value:25000},
+    {Month:"Sep",value:20000},
+    {Month:"Oct",value:30000},
+    {Month:"Nov",value:25000},
+    {Month:"Dec",value:40000},
+];
+
+const data1=[
+    {Source:"Direct",value:55},
+    {Source:"Referral",value:30},
+    {Source:"Social",value:15},
+]
+
+
 export function ChartDashboard() {
   return (
     <>
@@ -25,7 +50,14 @@ export function ChartDashboard() {
         </div>
         <div className="card-body">
             <div className="chart-area">
-                <canvas id="myAreaChart"></canvas>
+        <ResponsiveContainer width="100%" height="100%">
+            <LineChart data={data} width={500} height={300}>
+            <Line dataKey="value" stroke="#8884d8" />
+            <XAxis dataKey="Month" />
+            <YAxis dataKey="value"/>
+            <Tooltip />
+            </LineChart>
+       </ResponsiveContainer>
             </div>
         </div>
     </div>
@@ -52,7 +84,12 @@ export function ChartDashboard() {
         </div>
         <div className="card-body">
             <div className="chart-pie pt-4 pb-2">
-                <canvas id="myPieChart"></canvas>
+        <ResponsiveContainer width="100%" height="100%">
+            <PieChart width="100%" height="100%">
+            <Pie data={data1} dataKey="value"  fill="#36b9cc" />
+            <Tooltip/>
+            </PieChart>
+      </ResponsiveContainer>
             </div>
             <div className="mt-4 text-center small">
                 <span className="mr-2">

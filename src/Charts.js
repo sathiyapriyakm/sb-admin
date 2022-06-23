@@ -42,7 +42,14 @@ export function Charts() {
                             </div>
                             <div class="card-body">
                                 <div class="chart-area">
-                                <canvas id="myBarChart"></canvas>
+                            <ResponsiveContainer width="100%" height="100%">
+                                <LineChart data={data} width={500} height={300}>
+                                <Line dataKey="value" stroke="#8884d8" />
+                                <XAxis dataKey="Month" />
+                                <YAxis dataKey="value"/>
+                                <Tooltip />
+                                </LineChart>
+                            </ResponsiveContainer>
                                 </div>
                                 <hr />
                                 Styling for the area chart can be found in the
@@ -54,15 +61,14 @@ export function Charts() {
                                 <h6 class="m-0 font-weight-bold text-primary">Bar Chart</h6>
                             </div>
                             <div class="card-body">
-                                <div class="chart-bar">
-                            <ResponsiveContainer width="100%" height="100%">
-                                <LineChart data={data} width={500} height={300}>
-                                <Line dataKey="value" stroke="#8884d8" />
-                                <XAxis dataKey="Month" />
-                                <YAxis dataKey="value"/>
-                                <Tooltip />
-                                </LineChart>
-                            </ResponsiveContainer>  
+                                <div class="chart-bar"> 
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <BarChart width={500} height={600} data={data}>
+                                        <Bar dataKey="value" fill="green" />
+                                        <XAxis dataKey="Month" />
+                                        <YAxis />
+                                    </BarChart>
+                                </ResponsiveContainer>
                             </div>
                                 <hr />
                                 Styling for the bar chart can be found in the
@@ -78,14 +84,12 @@ export function Charts() {
                             </div>
                             <div class="card-body">
                                 <div class="chart-pie pt-4">
-                                        
-                                    <ResponsiveContainer width="100%" height="100%">
-                                    <BarChart width={500} height={600} data={data}>
-                                        <Bar dataKey="value" fill="green" />
-                                        <XAxis dataKey="Month" />
-                                        <YAxis />
-                                    </BarChart>
-                                    </ResponsiveContainer>
+                                <ResponsiveContainer width="100%" height="100%">
+                                    <PieChart width="100%" height="100%">
+                                    <Pie data={data1} dataKey="value"  fill="#36b9cc" />
+                                    <Tooltip/>
+                                    </PieChart>
+                                </ResponsiveContainer>
                                     </div>
                                 <hr />
                                 Styling for the donut chart can be found in the
