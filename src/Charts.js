@@ -1,26 +1,27 @@
 import React from "react";
-// import { LineChart,BarChart,PieChart,Pie,Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
+import { LineChart,BarChart,PieChart,Pie,Bar, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 
-// const data= [
-//     {Month:"Jan",value:0},
-//     {Month:"Feb",value:10000},
-//     {Month:"Mar",value:5000},
-//     {Month:"Apr",value:15000},
-//     {Month:"May",value:10000},
-//     {Month:"Jun",value:20000},
-//     {Month:"Jul",value:15000},
-//     {Month:"Aug",value:25000},
-//     {Month:"Sep",value:20000},
-//     {Month:"Oct",value:30000},
-//     {Month:"Nov",value:25000},
-//     {Month:"Dec",value:40000},
-// ];
+const data= [
+    {Month:"Jan",value:0},
+    {Month:"Feb",value:10000},
+    {Month:"Mar",value:5000},
+    {Month:"Apr",value:15000},
+    {Month:"May",value:10000},
+    {Month:"Jun",value:20000},
+    {Month:"Jul",value:15000},
+    {Month:"Aug",value:25000},
+    {Month:"Sep",value:20000},
+    {Month:"Oct",value:30000},
+    {Month:"Nov",value:25000},
+    {Month:"Dec",value:40000},
+];
 
-// const data1=[
-//     {Source:"Direct",value:55},
-//     {Source:"Referral",value:30},
-//     {Source:"Social",value:15},
-// ]
+const data1=[
+    {Source:"Direct",value:55},
+    {Source:"Referral",value:30},
+    {Source:"Social",value:15},
+]
+
 
 
 export function Charts() {
@@ -41,14 +42,7 @@ export function Charts() {
                             </div>
                             <div class="card-body">
                                 <div class="chart-area">
-                                {/* <ResponsiveContainer width="100%" height="100%">
-                                <LineChart data={data} width={500} height={300}>
-                                <Line dataKey="value" stroke="#8884d8" />
-                                <XAxis dataKey="Month" />
-                                <YAxis dataKey="value"/>
-                                <Tooltip />
-                                </LineChart>
-                            </ResponsiveContainer>  */}
+                                <canvas id="myBarChart"></canvas>
                                 </div>
                                 <hr />
                                 Styling for the area chart can be found in the
@@ -61,29 +55,15 @@ export function Charts() {
                             </div>
                             <div class="card-body">
                                 <div class="chart-bar">
-                                    {/* <ResponsiveContainer width="100%" height="100%">
-                                    <BarChart width={500} height={600} data={data}>
-                                        <Bar dataKey="value" fill="green" />
-                                        <XAxis dataKey="Month" />
-                                        <YAxis />
-                                    </BarChart>
-                                    </ResponsiveContainer> */}
-                                {/* <Bar
-                                    data={chartData}
-                                    options={{
-                                    plugins: {
-                                        title: {
-                                        display: true,
-                                        text: "Cryptocurrency prices"
-                                        },
-                                        legend: {
-                                        display: true,
-                                        position: "bottom"
-                                    }
-                                    }
-                                    }}
-                                /> */}
-                                </div>
+                            <ResponsiveContainer width="100%" height="100%">
+                                <LineChart data={data} width={500} height={300}>
+                                <Line dataKey="value" stroke="#8884d8" />
+                                <XAxis dataKey="Month" />
+                                <YAxis dataKey="value"/>
+                                <Tooltip />
+                                </LineChart>
+                            </ResponsiveContainer>  
+                            </div>
                                 <hr />
                                 Styling for the bar chart can be found in the
                                 <code>/js/demo/chart-bar-demo.js</code> file.
@@ -98,13 +78,15 @@ export function Charts() {
                             </div>
                             <div class="card-body">
                                 <div class="chart-pie pt-4">
-                                {/* <ResponsiveContainer width="100%" height="100%">
-                                    <PieChart width="100%" height="100%">
-                                    <Pie data={data1} dataKey="value"  fill="#36b9cc" />
-                                    <Tooltip/>
-                                    </PieChart>
-                                </ResponsiveContainer> */}
-                                </div>
+                                        
+                                    <ResponsiveContainer width="100%" height="100%">
+                                    <BarChart width={500} height={600} data={data}>
+                                        <Bar dataKey="value" fill="green" />
+                                        <XAxis dataKey="Month" />
+                                        <YAxis />
+                                    </BarChart>
+                                    </ResponsiveContainer>
+                                    </div>
                                 <hr />
                                 Styling for the donut chart can be found in the
                                 <code>/js/demo/chart-pie-demo.js</code> file.
